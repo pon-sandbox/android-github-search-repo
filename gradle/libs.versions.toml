@@ -1,0 +1,17 @@
+[versions]
+app-versionCode = "1"
+app-versionName = "1.0.0"
+android-compileSdk = "30"
+android-targetSdk = "30"
+android-minSdk = "23"
+android-gradle = "7.1.0"
+kotlin = "1.6.10"
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "android-gradle" }
+android-library = { id = "com.android.library", version.ref = "android-gradle" }
+
+[libraries]
+android-gradle = { module = "com.android.tools.build:gradle", version.ref = "android-gradle" }
+kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }

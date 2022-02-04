@@ -4,14 +4,14 @@ plugins {
 }
 
 android {
-    compileSdk 30
+    compileSdk libs.versions.android.compileSdk.get().toInteger()
 
     defaultConfig {
         applicationId "com.example.githubsearchrepo"
-        minSdk 23
-        targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        minSdk libs.versions.android.minSdk.get().toInteger()
+        targetSdk libs.versions.android.targetSdk.get().toInteger()
+        versionCode libs.versions.app.versionCode.get().toInteger()
+        versionName libs.versions.app.versionName.get()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
