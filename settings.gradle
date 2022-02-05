@@ -25,3 +25,4 @@ enableFeaturePreview("VERSION_CATALOGS")
 include ':app'
 include ':data:api'
 include ':data:repository'
+include ':model'
