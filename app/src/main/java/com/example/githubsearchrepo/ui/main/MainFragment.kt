@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.githubsearchrepo.R
+import androidx.lifecycle.lifecycleScope
+import com.example.githubsearchrepo.databinding.MainFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
@@ -22,7 +24,18 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        val binding = MainFragmentBinding.inflate(inflater, container, false)
+        val adapter = RepositoriesAdapter()
+        binding.repositoryList.adapter = adapter
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.uiState.collect {
+                adapter.submitList(it.repositories)
+            }
+        }
+        viewModel.searchRepository("Android")
+
+        return binding.root
     }
 
 }

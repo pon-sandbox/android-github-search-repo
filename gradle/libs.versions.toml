@@ -8,6 +8,7 @@ android-minSdk = "23"
 android-gradle = "7.1.1"
 
 androidx-fragment = "1.3.6"
+androidx-recyclerview = "1.2.1"
 
 kotlin = "1.6.10"
 
@@ -30,6 +31,7 @@ dagger-hilt = { id = "dagger.hilt.android.plugin", version.ref = "dagger-hilt" }
 android-gradle = { module = "com.android.tools.build:gradle", version.ref = "android-gradle" }
 
 androidx-fragment = { module = "androidx.fragment:fragment-ktx", version.ref = "androidx-fragment"}
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "androidx-recyclerview" }
 
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
