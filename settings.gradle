@@ -23,3 +23,4 @@ rootProject.name = "GitHubSearchRepo"
 enableFeaturePreview("VERSION_CATALOGS")
 
 include ':app'
+include ':data:repository'
