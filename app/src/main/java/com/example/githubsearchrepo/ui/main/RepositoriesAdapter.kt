@@ -21,7 +21,8 @@ class RepositoriesAdapter :
         }
     }
 
-    class RepositoryViewHolder(private val binding: ListItemRepositoryBinding) : RecyclerView.ViewHolder(binding.root) {
+    class RepositoryViewHolder(private val binding: ListItemRepositoryBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: GitHubRepo) {
             binding.run {
                 repository = item
@@ -31,7 +32,13 @@ class RepositoriesAdapter :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryViewHolder {
-        return RepositoryViewHolder(ListItemRepositoryBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return RepositoryViewHolder(
+            ListItemRepositoryBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
